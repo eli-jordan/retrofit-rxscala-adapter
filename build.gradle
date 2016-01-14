@@ -1,0 +1,22 @@
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+    compile 'io.reactivex:rxscala_2.11:0.25.1'
+    
+    compile 'com.squareup.retrofit2:converter-jackson:2.0.0-beta3'
+    compile 'com.fasterxml.jackson.module:jackson-module-scala_2.11:2.6.3'
+    
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3'
+}
+
+tasks.withType(ScalaCompile) {
+    scalaCompileOptions.useAnt = false
+}
