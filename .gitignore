@@ -1,0 +1,7 @@
+.project
+.classpath
+.gradle
+bin
+build
+.settings
+.DS_Store
