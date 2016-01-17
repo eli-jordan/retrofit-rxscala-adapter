@@ -1,13 +1,13 @@
 package sample
 
+import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
+
 import retrofit2.JacksonConverterFactory
 import retrofit2.Retrofit
-import retrofit2.http.GET
-import retrofit2.http.Path
 import rx.lang.scala.Observable
-import com.fasterxml.jackson.databind.DeserializationFeature
+import sample.Playing.GithubService
 
 object Playing {
 
@@ -37,7 +37,7 @@ object Playing {
     
     val retrofit = new Retrofit.Builder()
       .baseUrl("https://api.github.com")
-      .addCallAdapterFactory(retrofit2.RxScalaCallAdapterFactory)
+      .addCallAdapterFactory(retrofit2.RxScala.CallAdapterFactory)
       .addConverterFactory(JacksonConverterFactory.create(mapper))
       .build();
     
